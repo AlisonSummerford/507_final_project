@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Genre: {{genre}}</h1>
+
+    <form action="/retry" method="POST">
+
+        <input type="submit" name="clear_and_start_over" value="Try Another Search"/>
+
+    </form>
+    <br/>
+    <br/>
+    <form action="/movie_advisory_sort" method="POST">
+
+        Confirm Genre: <input type="text" name="genre"/> <br/>
+        <input type="submit" name="movie_advisory_sort" value="Sort By Advisory Rating"/>
+
+    </form>
+    <br/>
+    <br/>
+    <form action="/movie_year_sort" method="POST">
+      Confirm Genre: <input type="text" name="genre"/> <br/>
+        <input type="submit" name="movie_year_sort" value="Sort By Release Year"/>
+
+    </form>
+    <br/>
+    <br/>
+    <form action="/movie_language_sort" method="POST">
+        Confirm Genre: <input type="text" name="genre"/> <br/>
+        <input type="submit" name="movie_language_sort" value="Sort By Language"/>
+
+    </form>
+    <br/>
+    <br/>
+    <form action="/movie_duration_sort" method="POST">
+        Confirm Genre: <input type="text" name="genre"/> <br/>
+        <input type="submit" name="movie_duration_sort" value="Sort By Movie Duration"/>
+
+    </form>
+    <br/>
+    <br/>
+
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Release Year</th>
+        <th>Duration</th>
+        <th>Advisory Rating</th>
+        <th>Country</th>
+        <th>IMDB Rating</th>
+        <th>Language</th>
+        <th>Director</th>
+        <th>Actors</th>
+        <th>Plot</th>
+      </tr>
+      {% for a, b, c, d, e, f, g, h, i, j in your_list %}
+        <tr>
+          <td>{{a}}</td>
+          <td>{{b}}</td>
+          <td>{{c}}</td>
+          <td>{{d}}</td>
+          <td>{{e}}</td>
+          <td>{{f}}</td>
+          <td>{{g}}</td>
+          <td>{{h}}</td>
+          <td>{{i}}</td>
+          <td>{{j}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+
+
+  </body>
+</html>
